@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw; /* Полная ширина экрана */
+    overflow: hidden; /* Скрывает прокрутку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SFPRODISPLAYTHINITALIC', sans-serif;
+    position: relative; /* Для позиционирования псевдоэлементов */
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/your-background.gif') no-repeat center center; /* Основной фон */
+    background-size: cover; /* Масштабируем фоновое изображение */
+    z-index: -1; /* Отправляем за контент */
+    filter: blur(5px); /* Уменьшаем эффект блюра */
+}
+
+.blur-box {
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    color: white;
+}
+
+.blur-box h1, .blur-box p {
+    font-family: 'SFPRODISPLAYTHINITALIC', sans-serif; /* Шрифт для заголовка и обычного текста */
+    font-size: 1.5em; /* Размер текста заголовка */
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons a {
+    color: white; /* Цвет иконок */
+    font-size: 30px; /* Размер иконок */
+    transition: color 0.3s, transform 0.2s; /* Плавный переход для цвета и размера */
+}
+
+.social-icons a:hover {
+    color: #ffffff; /* Цвет при наведении */
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
